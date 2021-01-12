@@ -1,3 +1,6 @@
+# Data-Scientist-Nanodegree-Program
+By Marwan Saeed Alsharabbi
+
 # Disaster Response Pipeline Project
 
 ## Table of Contents
@@ -26,7 +29,7 @@ Your project will include a web app where an emergency worker can input a new me
 
 <a id='inst'></a>
 
-### 1. Instructions
+### 2. Instructions
 1. Run the following commands in the project's root directory to set up your database and model.
     
     - To run ETL pipeline that cleans data and stores in database
@@ -41,13 +44,13 @@ Your project will include a web app where an emergency worker can input a new me
 
 <a id='components'></a>
 
-## 2. Project Components
+## 3. Project Components
 
 There are three components of this project:
 
 <a id='etl_pipeline'></a>
 
-### 2.1. ETL Pipeline
+### 3.1. ETL Pipeline
 In a Python script, process_data.py, write a data cleaning pipeline that:
 
 - Loads the messages and categories datasets
@@ -57,7 +60,7 @@ In a Python script, process_data.py, write a data cleaning pipeline that:
 
 <a id='ml_pipeline'></a>
 
-### 2.2. ML Pipeline
+### 3.2. ML Pipeline
 In a Python script, train_classifier.py, write a machine learning pipeline that:
 
 Loads data from the SQLite database
@@ -69,22 +72,29 @@ Exports the final model as a pickle file
 
 <a id='flask'></a>
 
-### 2.3. Flask Web App
+### 3.3. Flask Web App
 For this part, you'll need to:
 
 - Modify file paths for database and model as needed
 - Add data visualizations using Plotly in the web app. One example is provided for you
 
+<a id='run'></a>
+
+## 4. Running
+
+There are three steps to get up and runnning with the web app if you want to start from ETL process.
+
+
 <a id='cleaning'></a>
 
-### 3.1. Data Cleaning
+### 4.1. Data Cleaning
 
 **Go to the project directory** and the run the following command:
 To run ETL pipeline that cleans data and stores in database python data/process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db
 
  <a id='training'></a>
 
-### 3.2. Training Classifier
+### 4.2. Training Classifier
 **Go to the project directory** and the run the following command:
 - To run ML pipeline that trains classifier and saves
         `python models/train_classifier.py data/DisasterResponse.db models/classifier.pkl`
@@ -92,7 +102,7 @@ To run ETL pipeline that cleans data and stores in database python data/process_
         
 <a id='starting'></a>
 
-### 3.3. Starting the web app
+### 4.3. Starting the web app
 
 2. Run the following command in the app's directory to run your web app.
     - pip install -U scikit-learn scipy matplotlib
@@ -112,7 +122,7 @@ To run ETL pipeline that cleans data and stores in database python data/process_
 
 <a id='Directory'></a>
 
-### 1. Project Directory Structure
+### 5. Project Directory Structure
 ```bash
 C:.
 │   README.md
