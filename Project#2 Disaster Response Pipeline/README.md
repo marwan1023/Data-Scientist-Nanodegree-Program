@@ -90,6 +90,7 @@ There are three steps to get up and runnning with the web app if you want to sta
 ### 4.1. Data Cleaning
 
 **Go to the project directory** and the run the following command:
+
 To run ETL pipeline that cleans data and stores in database python data/process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db
 
  <a id='training'></a>
@@ -97,6 +98,7 @@ To run ETL pipeline that cleans data and stores in database python data/process_
 ### 4.2. Training Classifier
 **Go to the project directory** and the run the following command:
 - To run ML pipeline that trains classifier and saves
+
         `python models/train_classifier.py data/DisasterResponse.db models/classifier.pkl`
        
         
@@ -105,6 +107,7 @@ To run ETL pipeline that cleans data and stores in database python data/process_
 ### 4.3. Starting the web app
 
 2. Run the following command in the app's directory to run your web app.
+
     - pip install -U scikit-learn scipy matplotlib
     - `python run.py`
 
