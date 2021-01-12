@@ -76,7 +76,7 @@ In a Python script, train_classifier.py, write a machine learning pipeline that:
 For this part, you'll need to:
 
 - Modify file paths for database and model as needed
-- Add data visualizations using Plotly in the web app. One example is provided for you
+- Add data visualizations using Plotly in the web app. 
 
 <a id='run'></a>
 
