@@ -92,6 +92,8 @@ There are three steps to get up and runnning with the web app if you want to sta
 **Go to the project directory** and the run the following command:
 
 To run ETL pipeline that cleans data and stores in database python data/process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db
+ 
+ `python data/process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db`
 
  <a id='training'></a>
 
