@@ -156,7 +156,7 @@ Or can we use more precise algorithms to build a data-appropriate learning model
  
  ### Recommendation
  - Assuming the published data are reliable, the SIR model (1) can be applied to assess the spread of the COVID-19 disease and predict the number of infected, removed and recovered populations and deaths in the communities, accommodating at the same time possible surges in the number of susceptible individuals.
- - Preferably exclude vaccine columns, analyze and analyze data and sites[covid-world-vaccination-progress] (https://www.kaggle.com/gpreda/covid-world-vaccination-progress)
+ - Preferably exclude vaccine columns, analyze and analyze data and sites @ [covid-world-vaccination-progress](https://www.kaggle.com/gpreda/covid-world-vaccination-progress)
  -  It collects separate vaccine data, analyzes it, and creates a prediction model for daily and monthly vaccination.
 
 #### References and Future Work
