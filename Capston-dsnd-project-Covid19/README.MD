@@ -110,7 +110,7 @@ For now, let's assume this was indeed a data entry error. We can use one of the 
  
  For the EDA and Visualization I have used Our World in Data. Based on the research, I decided to use packages like Plotly and seaborn for better visualization, also it needed jupyter extensions to display the graph. I have created couple of plots and maps, created bar plot to display top 15 countries with highest number of death rates created sub bar plots for displaying Top 15 Countries with Confirmed Cases, Top 15 Countries with total_deaths , Top 15 Countries with new Cases, and Top 15 Countries with people_fully_vaccinated and total_vaccinations . Also created a bar chart for comparing confirmed, death and total cases. Created correlation heat map to find out the highly correlated variables. Created Scatter geo map for displaying the trend over the time and created including variables like gdp_per_capita , diabetes_prevalence ,female_smokers, male_smokers, hospital_beds_per_100k, cvd_death_rate. visualizations of the analysis are included in the attached and answer for some questions
  
- see the notbook or html file [Capston-dsnd-project-Covid19](https://github.com/marwan1023/Data-Scientist-Nanodegree-Program/blob/master/Capston-dsnd-project-Covid19/Capston- dsnd-project.ipynb)
+see the notbook or html file [Capston-dsnd-project-Covid19](https://github.com/marwan1023/Data-Scientist-Nanodegree-Program/blob/master/Capston-dsnd-project-Covid19/Capston-dsnd-project.ipynb)
  
 ## <a id="7">Modeling</a>
 
