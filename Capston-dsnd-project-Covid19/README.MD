@@ -152,7 +152,7 @@ Or can we use more precise algorithms to build a data-appropriate learning model
 
  ## <a id="8">Write A COVID-19 Analysis Post</a>
  
- This project is also featured on the Medium website @ [Analyzing Data on COVID-19 (coronavirus) by Our World in Data.](https://marwanalsharabbi.medium.com/analyzing-data-on- covid-19-coronavirus-by-our-world-in-data-d61676b11586)
+This project is also featured on the Medium website @ [Analyzing Data on COVID-19 (coronavirus) by Our World in Data.](https://marwanalsharabbi.medium.com/analyzing-data-on-covid-19-coronavirus-by-our-world-in-data-d61676b11586)
  
  ### Recommendation
  - Assuming the published data are reliable, the SIR model (1) can be applied to assess the spread of the COVID-19 disease and predict the number of infected, removed and recovered populations and deaths in the communities, accommodating at the same time possible surges in the number of susceptible individuals.
@@ -173,8 +173,8 @@ Or can we use more precise algorithms to build a data-appropriate learning model
 
 - https://covid19.moh.gov.sa/
 
--https://github.com/
+- https://github.com/
 
--https://www.kaggle.com/
+- https://www.kaggle.com/
  
  
