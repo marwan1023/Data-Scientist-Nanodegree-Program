@@ -134,7 +134,7 @@ Created a Linear regression model and fit the model with owid COVID19 data, pred
 - Used OneWorld.org data for modeling.
 - XGBoost will generally fit training data much better than linear regression.
 - Orange line indicates the death prediction
-- 
+ 
 ### 2- k-nearest neighbors(KNN) algorithm
 
    will create a model that can predict the risk for the Case Mortality Ratio of a Country utilizing its Life Expectancy, Percentage of Population over 65, and Percentage of     diabetes_prevalence and cardiovasc_death_rate 
