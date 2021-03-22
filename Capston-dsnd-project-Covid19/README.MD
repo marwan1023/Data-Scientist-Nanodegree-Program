@@ -9,11 +9,11 @@ By Marwan Saeed Alsharabbi
 - <a href='#2'>Load packages Prerequisites</a> 
 - <a href='#3'>Data and variables</a>   
 - <a href='#4'>Questions and Problems</a>  
-- <a href='#4'>Perform data preparation and Cleaning</a> 
-- <a href='#4'>Evaluate the Results</a>
-- <a href='#4'>Modeling</a>      
-- <a href='#5'>Write A COVID-19 Analysis Blog Post</a>
-- <a href='#6'>Project Directory Structure</a>
+- <a href='#5'>Perform data preparation and Cleaning</a> 
+- <a href='#6'>Evaluate the Results</a>
+- <a href='#7'>Modeling</a>      
+- <a href='#8'>Write A COVID-19 Analysis Blog Post</a>
+
 
 
 ## <a id="1">Introduction</a> 
@@ -94,7 +94,7 @@ I will create a model that can predict the risk for the Case Mortality Ratio of 
 
 It decided on using Population Over Age 65 and Obesity because in the world, over 80% of the deaths were in the population 65 and over, and the CDC has stated that 94% of deaths had some underlying health condition. We also used Life Expectency per country to account for possible deficiencies in the health care system. John Hopkins University has listed several diseases such as heart disease and Diabetes which are known to be exacerbated by Obesity. Our idea is that we can more accurately predict the Mortality Ratio of COVID-19 by using both population 65 and over and Obesity rather than just population 65 and over. This may show that creating a healthier population is the best way to prevent the devastation in future pandemics that the world is currently facing
 
-## <a id="4">Perform data preparation and Cleaning</a>
+## <a id="5">Perform data preparation and Cleaning</a>
 
 For now, let's assume this was indeed a data entry error. We can use one of the following approaches for dealing with the missing or faulty value:
 
@@ -106,11 +106,75 @@ Which approach you pick requires some context about the data and the problem. In
 
 It is not really logical to delete Nan values but replace with 0, because that would confirm that the result was static because the data is historical and adopts high time series, we cannot replace or delete even the most data in the rows because it is data historical 
  
- ## <a id="4">Evaluate the Results</a>
+ ## <a id="6">Evaluate the Results</a>
+ 
+ For the EDA and Visualization I have used Our World in Data. Based on the research, I decided to use packages like Plotly and seaborn for better visualization, also it needed jupyter extensions to display the graph. I have created couple of plots and maps, created bar plot to display top 15 countries with highest number of death rates created sub bar plots for displaying Top 15 Countries with Confirmed Cases, Top 15 Countries with total_deaths , Top 15 Countries with new Cases, and Top 15 Countries with people_fully_vaccinated and total_vaccinations . Also created a bar chart for comparing confirmed, death and total cases. Created correlation heat map to find out the highly correlated variables. Created Scatter geo map for displaying the trend over the time and created including variables like gdp_per_capita , diabetes_prevalence ,female_smokers, male_smokers, hospital_beds_per_100k, cvd_death_rate. visualizations of the analysis are included in the attached and answer for some questions
+ 
  see the notbook or html file [Capston-dsnd-project-Covid19](https://github.com/marwan1023/Data-Scientist-Nanodegree-Program/blob/master/Capston-dsnd-project-Covid19/Capston-dsnd-project.ipynb)
  
- ## <a id="5">Write A COVID-19 Analysis Post</a>
+## <a id="7">Modeling</a>
+
+ ### 1- Linear Regression-Forecast
+Created a Linear regression model and fit the model with owid COVID19 data, predicted the world death projection for the next 30 days. In this project I have used sklearn for creating Linear Regression model and created training split with 80 to 20%. The trained the model and predicted the death for next 30 days. Also created model using XGBoost for improving the linear regression model and fit the model with owid COVID19 data, predicted the world death projection for the next 30 day.
+
+ #### Linear Regression Model: used to predict future values from past values
+- Used OneWorld.org data for modeling.
+- Predicted the Death rate for next 30 days with independent variable like age, gdp, diabetes, smokers, hospital beds etc.
+- Split into 80% train and 20% test data.
+- Linear Regression Fitted with Accuracy : 0.9976567640125802
+- Used sklearn.model_selection for train_test_split
+- Used sklearn.linear_model for LinearRegression
+- Orange line indicates the future forecast of Death.
+- Predicted the Death rate for next 30 days in the forecast column
+
+#### XGboost algorithm to see if we can get better results
+
+- XGBoost is an optimized distributed gradient boosting library designed to be highly efficient, flexible and portable. It implements machine learning algorithms under the Gradient Boosting framework. XGBoost provides a parallel tree boosting (also known as GBDT, GBM) that solve many data science problems in a fast and accurate way. The same code runs on major distributed environment (Kubernetes, Hadoop, SGE, MPI, Dask) and can solve problems beyond billions of examples.
+
+- Used OneWorld.org data for modeling.
+- XGBoost will generally fit training data much better than linear regression.
+- Orange line indicates the death prediction
+- 
+### 2- k-nearest neighbors(KNN) algorithm
+
+ will create a model that can predict the risk for the Case Mortality Ratio of a Country utilizing its Life Expectancy, Percentage of Population over 65, and Percentage of diabetes_prevalence and cardiovasc_death_rate ?
+It decided on using Population Over Age 65 and diabetes_prevalence cardiovasc_death_rate because in the world, over 80% of the deaths were in the population 65 and over, and the CDC has stated that 94% of deaths had some underlying health condition. We also used Life Expectancy per country to account for possible deficiencies in the health care system. John Hopkins University has listed several diseases such as heart disease and Diabetes which are known to be exacerbated by cardiovasc_death_rate and Obesity. Our idea is that we can more accurately predict the Mortality Ratio of COVID-19 by using both population 65 and over and Obesity rather than just population 65 and over. This may show that creating a healthier population is the best way to prevent the devastation in future pandemics that the world is currently facing.
+After viewing the graphs in Linear Regression-Forecast we the accuracy that XGboost algorithms can achieve with this data. . We will continue and see if our ML Algorithm can do better than we are expecting. We have initially chosen to use categorization with the HighRisk category as that may be more accurate than regression.
+Or can we use more precise algorithms to build a data-appropriate learning model?
+
+- We then implemented a cross_validation scoring utilizing a cv of 8 to make sure the randomness of our train/test data was not being affected and got something similar, but with a nterestingly a slightly better classification of 90.518% with k =7  
+- The model using the extra features especially the human_development_index, smoker data and more recent target data has gotten better at predicting a countries rate of mortality vs population going from 90% to 93% accuracy depending on the randomization.
+
+ - This may be due to different reporting systems for what is and is not a covid death and overall accuracy of the inputs.
+
+- Our original Hypotheses that Age and Obesity would be factors seem to have been proven true through the data, one might even be able to try regression on the normalized mortality / population and if we had the One World Data originally we may have even gone further and tried that as the correlation seems to be stronger
+
+
+ ## <a id="8">Write A COVID-19 Analysis Post</a>
  
- This project is also featured on the Medium website @ [2020 Stack Overflow Survey Analysis](https://marwanalsharabbi.medium.com/2020-stack-overflow-survey-analysis-25a515260a2a)
+ This project is also featured on the Medium website @ [Analyzing Data on COVID-19 (coronavirus) by Our World in Data.](https://marwanalsharabbi.medium.com/analyzing-data-on-covid-19-coronavirus-by-our-world-in-data-d61676b11586)
+ 
+ ### Recommendation
+ - Assuming the published data are reliable, the SIR model (1) can be applied to assess the spread of the COVID-19 disease and predict the number of infected, removed and recovered populations and deaths in the communities, accommodating at the same time possible surges in the number of susceptible individuals.
+ - Preferably exclude vaccine columns, analyze and analyze data and sites[covid-world-vaccination-progress] (https://www.kaggle.com/gpreda/covid-world-vaccination-progress)
+ -  It collects separate vaccine data, analyzes it, and creates a prediction model for daily and monthly vaccination.
+
+#### References and Future Work
+    
+1- https://www.geeksforgeeks.org/python-programming-language/?ref=leftbar
+
+2- https://www.python-course.eu/python3_class_and_instance_attributes.php
+
+3- https://thispointer.com/data-analysis-in-python-using-pandas/
+
+4- https://jovian.ml/learn/data-analysis-with-python-zero-to-pandas
+
+5- https://ourworldindata.org/coronavirus
+
+6- https://covid19.moh.gov.sa/
+
+7-https://github.com/
+
+8-https://www.kaggle.com/
  
  
