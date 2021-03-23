@@ -153,11 +153,25 @@ Or can we use more precise algorithms to build a data-appropriate learning model
  ## <a id="8">Write A COVID-19 Analysis Post</a>
  
 This project is also featured on the Medium website @ [Analyzing Data on COVID-19 (coronavirus) by Our World in Data.](https://marwanalsharabbi.medium.com/analyzing-data-on-covid-19-coronavirus-by-our-world-in-data-d61676b11586)
+
+### Conclusion
+
+Based on the analysis, there are several things we can conclude.
+1- The United States and India are more affected by Covid 19, and the number of injuries and deaths is very high. Nevertheless, it is the first in the world to be vaccinated from the Corona vaccine 
+2-Utilizing a High Risk classification target that was determined via those countries whose Covid Death per million population was greater than 0.65 std deviations representing about 25% of the countries, we evaluated over 12 features provided in the dataset using kNN and a range of k values. The following four features showed an accuracy of about 93 % using kNN with k=7
+3- It's got accuracy :0.9976567640125802 from Linear Regression-Forecast Fitted Predicted the Death rate for next 30 days with independent variable like age, gdp, diabetes, smokers, hospital beds etc.
+4- Although for most people COVID-19 causes only mild illness, it can make some people very ill. More rarely, the disease can be fatal. Older people, and those with pre- existing medical conditions (such as high blood pressure, heart problems or diabetes) appear to be more vulnerable.
+5- COVID-19 The Government Response Stringency Index 
+n the dataset the Government Response Stringency Index is a composite measure based on nine response indicators including
+school closures, workplace closures, and travel bans, rescaled to a value from 0 to 100 (100 = strictest response).
+6- we were able to create several visualizations in the Jupyter Notebook with scatterplots comparing the different features to the High Risk Category that we found to produce the best model. Age, and obesity do seem to be factors in the mortality rate with extra features such as smoking, cardiovascular disease helping improve the numbers further.
+7- Commitment to virus prevention tools, especially in densely populated cities Because differences in the population size between countries are often large, and the COVID-19 death count in more populous countries tends to be higher. Because of this it can be insightful to know how the number of confirmed deaths in a country compares to the number of people who live there, especially when comparing across countries.
+
+### Recommendation and Future Improvements
+1- Recommendation Assuming the published data are reliable, the SIR model can be applied to assess the spread of the COVID-19 disease and predict the number of infected, removed and recovered populations and deaths in the communities, accommodating at the same time possible surges in the number of susceptible individuals
+2- Preferably exclude vaccine columns, analyzing for example @ [covid-world-vaccination-progress](https://www.kaggle.com/gpreda/covid-world-vaccination-progress)
+3- It collects separate vaccine data, analyzes it, and creates a prediction model for daily and monthly vaccination
  
- ### Recommendation
- - Assuming the published data are reliable, the SIR model (1) can be applied to assess the spread of the COVID-19 disease and predict the number of infected, removed and recovered populations and deaths in the communities, accommodating at the same time possible surges in the number of susceptible individuals.
- - Preferably exclude vaccine columns, analyze and analyze data for example @ [covid-world-vaccination-progress](https://www.kaggle.com/gpreda/covid-world-vaccination-progress)
- -  It collects separate vaccine data, analyzes it, and creates a prediction model for daily and monthly vaccination.
 
 #### References and Future Work
     
