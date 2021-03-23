@@ -157,6 +157,7 @@ This project is also featured on the Medium website @ [Analyzing Data on COVID-1
 ### Conclusion
 
 Based on the analysis, there are several things we can conclude.
+
 1- The United States and India are more affected by Covid 19, and the number of injuries and deaths is very high. Nevertheless, it is the first in the world to be vaccinated from the Corona vaccine 
 
 2-Utilizing a High Risk classification target that was determined via those countries whose Covid Death per million population was greater than 0.65 std deviations representing about 25% of the countries, we evaluated over 12 features provided in the dataset using kNN and a range of k values. The following four features showed an accuracy of about 93 % using kNN with k=7
