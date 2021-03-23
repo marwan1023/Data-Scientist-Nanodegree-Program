@@ -182,7 +182,7 @@ school closures, workplace closures, and travel bans, rescaled to a value from 0
 3- It collects separate vaccine data, analyzes it, and creates a prediction model for daily and monthly vaccination
  
 
-#### References and Future Work
+#### References 
     
 - https://www.geeksforgeeks.org/python-programming-language/?ref=leftbar
 
