@@ -242,7 +242,7 @@ school closures, workplace closures, and travel bans, rescaled to a value from 0
 ## Deliverables
 
 ### Write A COVID-19 Analysis Blog Post
- This project is also featured on the Medium website @ [Analyzing Data on COVID-19 (coronavirus) by Our World in Data.](https://marwanalsharabbi.medium.com/analyzing-data-on-  covid-19-coronavirus-by-our-world-in-data-d61676b11586)
+ This project is also featured on the Medium website @ [Analyzing Data on COVID-19 (coronavirus) by Our World in Data.](https://marwanalsharabbi.medium.com/analyzing-data-on-covid-19-coronavirus-by-our-world-in-data-d61676b11586)
 
 ### References 
     
