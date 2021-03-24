@@ -1,11 +1,8 @@
 ### Data-Scientist-Nanodegree-Program
 By Marwan Saeed Alsharabbi
 ## COVID-19 Analysis ,visualization & Prediction
-
-### COVID-19 Analysis ,visualization & Prediction 
-Table of Contents
+### Table of Contents
 =================
-  
   * [Data Scientist Capstone](#data-Scientist-Capstone)
       + [Project Definition](#Project-Definition)
         - [Project Overview](#Project-Overview)
