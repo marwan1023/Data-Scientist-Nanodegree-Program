@@ -8,7 +8,6 @@ By Marwan Saeed Alsharabbi
         - [Project Overview](#Project-Overview)
         - [Problem Statement](#Problem-Statement)
         - [Metrics](#Metrics)
-        - [Saving Model](#saving-model)
       + [Analysis](#Analysis)
         - [Data Exploration](#Data-Exploration)
         - [Data Visualization](#Data-Visualization)
@@ -137,11 +136,12 @@ see the notbook or html file [Capston-dsnd-project-Covid19](https://github.com/m
 - Top 15 countries for the total_cases,total_deaths,total_deaths_per_million,total_tests ,people_fully_vaccinated and total_vaccinations on plot_hbar and Visulizing Treemaps?
 - How many the New Deaths Smoothed day by day in continents ?
 - How many the New Tests Smoothed day by day in continents ?
+- How many the positive_rate day by day in continents
 - find some gdp_per_capita and new_cases clusters over countries ?
 - find some new_deaths_smoothed_per_million, life_expectancy and hospital_beds_per_thousand clusters over countries ?
 - find some new_deaths_smoothed_per_million, handwashing_facilities and extreme_poverty clusters over countries ?
 - find some new_deaths_smoothed_per_million, life_expectancy and hospital_beds_per_thousand clusters over countries?
-- Which vaccination scheme is used most?
+
  
 ## Methodology 
 
@@ -186,6 +186,64 @@ Neighbors-based classification is a type of instance-based learning or non-gener
 - acc = (predictions == y_test).mean() first checks if all the values in y_test is equal to corresponding values in predictions which either results in 0 or 1. And then takes the mean of it (which is still 0 or 1). 
 
 ## Results
+- How many total population in each location by continents from our dataset? 
+
+ ![dsnd](./Screenshots/pup1.png)
+ ![dsnd](./Screenshots/pup2.png)
+ 
+ - - Top 15 countries for the total_cases,total_deaths,total_deaths_per_million,total_tests ,people_fully_vaccinated and total_vaccinations on plot_hbar and Visulizing Treemaps?
+  #### total_cases
+  ![dsnd](./Screenshots/totalcasesh.png)
+  
+  ![dsnd](./Screenshots/totalcasestr.png)
+  
+ #### total_deaths
+ 
+  ![dsnd](./Screenshots/totaldeathsh.png)
+  
+  ![dsnd](./Screenshots/totaldeathtr.png)
+  
+#### total_deaths_per_million
+
+  ![dsnd](./Screenshots/totaldeathspermillon.png)
+  
+#### test per confirmed(%)
+
+  ![dsnd](./Screenshots/testperconfirmedtr.png)
+  
+#### total_tests
+
+![dsnd](./Screenshots/totaltestsh.png)
+
+![dsnd](./Screenshots/totaltesttr.png)
+
+#### total_vaccinations
+
+![dsnd](./Screenshots/totalvaccinationh.png)
+
+![dsnd](./Screenshots/totalvaccinationtr.png)
+
+#### people_fully_vaccinated
+
+![dsnd](./Screenshots/peoplefullyvaccinatedh.png)
+
+![dsnd](./Screenshots/peoplefullyvaccinatedtr.png)
+
+- How many the New Deaths Smoothed day by day in continents ?
+
+ ![dsnd](./Screenshots/NewDeathsSmoothedline.png)
+ 
+- How many the positive_rate day by day in continents
+
+![dsnd](./Screenshots/positiverateline.png)
+
+- find some new_deaths_smoothed_per_million, handwashing_facilities and extreme_poverty clusters over countries ?
+
+![dsnd](./Screenshots/scatte1.png)
+
+-  find some new_deaths_smoothed_per_million, life_expectancy and hospital_beds_per_thousand clusters over countries?
+
+![dsnd](./Screenshots/scatte2.png)
 
 ### Model Evaluation and Validation
 
@@ -202,6 +260,8 @@ Created a Linear regression model and fit the model with owid COVID19 data, pred
 - Orange line indicates the future forecast of Death.
 - Predicted the Death rate for next 30 days in the forecast column
 
+![dsnd](./Screenshots/linerreg1pro.png)
+
 #### XGboost algorithm to see if we can get better results
 
 - XGBoost is an optimized distributed gradient boosting library designed to be highly efficient, flexible and portable. It implements machine learning algorithms under the Gradient Boosting framework. XGBoost provides a parallel tree boosting (also known as GBDT, GBM) that solve many data science problems in a fast and accurate way. The same code runs on major distributed environment (Kubernetes, Hadoop, SGE, MPI, Dask) and can solve problems beyond billions of examples.
@@ -209,7 +269,9 @@ Created a Linear regression model and fit the model with owid COVID19 data, pred
 - Used OneWorld.org data for modeling.
 - XGBoost will generally fit training data much better than linear regression.
 - Orange line indicates the death prediction
- 
+
+  ![dsnd](./Screenshots/XGboost.png)
+  
 ### 2- k-nearest neighbors(KNN) algorithm
 
  I will create a model that can predict the risk for the Case Mortality Ratio of a Country utilizing its Life Expectancy, Percentage of Population over 65, and Percentage of      diabetes_prevalence and cardiovasc_death_rate 
