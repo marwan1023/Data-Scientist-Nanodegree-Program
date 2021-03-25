@@ -33,6 +33,7 @@ By Marwan Saeed Alsharabbi
 
 ## Project Definition
 
+### Project-Overview
 Coronavirus is a family of viruses that are named after their spiky crown. The novel coronavirus, also known as SARS-CoV-2, is a contagious respiratory virus that first reported in Wuhan, China. On 2/11/2020, the World Health Organization designated the name COVID-19 for the disease caused by the novel coronavirus. This notebook aims at exploring COVID-19 through data analysis and projections.
 The world is going through a difficult time and fighting with a deadly virus called COVID-19. Coronavirus disease 2019 (COVID-19) is an infectious disease caused by severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2). It was first identified in December 2019 in Wuhan, China, and has resulted in an ongoing pandemic. The first case may be traced back to 17 November 2019.As of 8 June 2020, more than 7.06 million cases have been reported across 188 countries and territories, resulting in more than 403,000 deaths. More than 3.16 million people have recovered.
 
@@ -82,27 +83,14 @@ It decided on using Population Over Age 65 and Obesity because in the world, ove
 
 ## Metrics
 
-### Linear regression-Forecast model
-- Linear regression doesn't work on date data. Therefore we need to convert it into index form  for predicting date value in the future
-- Linear Regression Model: used to predict future values from past values
-- input data Used OneWorld.org data for modeling.
-- Predicted the Death rate for next 30 days with independent variable like age, gdp, diabetes, smokers, hospital beds etc.
-- Split into 80% train and 20% test data. X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0)
-- Linear Regression Fitted with Accuracy ofaccuracy = lr.score(X_test, y_test)
-- Used sklearn.model_selection for train_test_split 
-- Used sklearn.linear_model for LinearRegression forecast_prediction = lr.predict(X_forecast_out)
-- Predicted the Death rate for next 30 days in the forecast column
+- There are several ways to check your Linear Regression model accuracy. Usually, you may use Root mean squared error. You may train several Linear Regression models, adding or removing features to your dataset, and see which one has the lowest RMSE - the best one in the case I will use accuracy to gauge the performance of the model  
+-  Linear Regression Fitted with Accuracy of accuracy = lr.score(X_test, y_test)
+-  Accuracy: One of the more obvious metrics, it is the measure of all the correctly identified cases. It is most used when all the classes are equally important
+-  In multilabel classification, this function computes subset accuracy: the set of labels predicted for a sample must exactly match the corresponding set of labels in y_true.
+- Accuracy is the most intuitive performance measure, and defined as the ratio of the number of correctly classified objects to the total number of objects evaluated.
+- In the k-nearest neighbors(KNN) algorithm I will use accuracy
+-  accuracy = (predictions == y_test).mean() first checks if all the values in y_test is equal to corresponding values in predictions which either results in 0 or 1. And then takes the mean of it (which is still 0 or 1).
 
-### k-nearest neighbors(KNN) algorithm
-
-Neighbors-based classification is a type of instance-based learning or non-generalizing learning: it does not attempt to construct a general internal model, but simply stores instances of the training data. Classification is computed from a simple majority vote of the nearest neighbors of each point: a query point is assigned the data class which has the most representatives within the nearest neighbors of the point.
-
-- It decided to Create a column the High Risk and base it off of total_deaths_per_million which is the Total deaths attributed to COVID-19 per 1,000,000 people
-- Calculate the distance between the data sample and every other sample with the help of a method such as Euclidean.
-- Sort these values of distances in ascending order.
-- Choose the top K values from the sorted distances.
-- Assign the class to the sample based on the most frequent class in the above K values.
-- acc = (predictions == y_test).mean() first checks if all the values in y_test is equal to corresponding values in predictions which either results in 0 or 1. And then takes the mean of it (which is still 0 or 1). 
 
 ## Analysis
 
@@ -121,7 +109,8 @@ As of 26 January 2021, the columns are: `iso_code`, `continent`, `location`, `da
 
 A [full codebook](https://github.com/owid/covid-19-data/tree/master/public/data/owid-covid-codebook.csv) is made available, with a description and source for each variable in the dataset.`
 
-
+ ### missing or faulty value
+ 
 For now, let's assume this was indeed a data entry error. We can use one of the following approaches for dealing with the missing or faulty value:
 
 - Replace it with 0.
@@ -157,10 +146,44 @@ see the notbook or html file [Capston-dsnd-project-Covid19](https://github.com/m
 ## Methodology 
 
 ### Data Preprocessing
+- The preprocessing done in the “Prepare data” from https://ourworldindata.org/coronavirus
+- To construct a anlysis capable to make good recommendations, it is necessary to understand how the features influence the desired variable. To make this, I will split my work in tow stages:
+#### -  1. Exploring: 
+- An exploratory analysis, to understand the structure of data, missing values, correlations and etc, to select the best set of features to be used at the analysis.
+- Understand the data and learn categorical numerical features in the dataset
+- Let's assume this was indeed a data entry error. We can use one of the following approaches for dealing with the missing or faulty value:
+Or the delay in knowing the results due to Covid 19 in some countries and using some measures and statistics and displaying the results to understand the data
+- You answered some questions and presented the results with visualization
+#### -  2. Modeling: 
+- In this step, I try to find the best and simplest model for describing the data
+- Created a Linear regression model and fit the model with owid COVID19 data, predicted the world death projection for the next 30 days.using the with independent variable like age, gdp, diabetes, smokers, hospital beds etc
+- I will create a model that can predict the risk for the Case Mortality Ratio of a Country utilizing its Life Expectancy, Percentage of Population over 65, and Percentage of diabetes_prevalence and cardiovasc_death_rate ?
 
 ### Implementation
+The implementation process can be divided into two main stages:
+1. The stage of analyzing the data and answering some questions
+- It appears that each column contains values of a specific data type. For the numeric columns, you can view the some statistical information like mean, standard deviation, minimum/maximum values and number of non-empty values using the .describe method For some specific continents like Asia, Europe, America and Africa
+2. The model training phase: Predictions are presented and the models are calculated in the future. The data was divided into testing and training
+ #### Linear Regression-Forecast
+ - Linear regression doesn't work on date data. Therefore we need to convert it into index form  for predicting date value in the future
+- Linear Regression Model: used to predict future values from past values
+- input data Used OneWorld.org data for modeling.
+- Predicted the Death rate for next 30 days with independent variable like age, gdp, diabetes, smokers, hospital beds etc.
+- Split into 80% train and 20% test data. X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0)
+- Linear Regression Fitted with Accuracy of accuracy = lr.score(X_test, y_test)
+- Used sklearn.model_selection for train_test_split 
+- Used sklearn.linear_model for LinearRegression forecast_prediction = lr.predict(X_forecast_out)
+- Predicted the Death rate for next 30 days in the forecast column
+#### k-nearest neighbors(KNN) algorithm
 
-### Refinement
+Neighbors-based classification is a type of instance-based learning or non-generalizing learning: it does not attempt to construct a general internal model, but simply stores instances of the training data. Classification is computed from a simple majority vote of the nearest neighbors of each point: a query point is assigned the data class which has the most representatives within the nearest neighbors of the point.
+
+- It decided to Create a column the High Risk and base it off of total_deaths_per_million which is the Total deaths attributed to COVID-19 per 1,000,000 people
+- Calculate the distance between the data sample and every other sample with the help of a method such as Euclidean.
+- Sort these values of distances in ascending order.
+- Choose the top K values from the sorted distances.
+- Assign the class to the sample based on the most frequent class in the above K values.
+- acc = (predictions == y_test).mean() first checks if all the values in y_test is equal to corresponding values in predictions which either results in 0 or 1. And then takes the mean of it (which is still 0 or 1). 
 
 ## Results
 
@@ -189,7 +212,7 @@ Created a Linear regression model and fit the model with owid COVID19 data, pred
  
 ### 2- k-nearest neighbors(KNN) algorithm
 
-   will create a model that can predict the risk for the Case Mortality Ratio of a Country utilizing its Life Expectancy, Percentage of Population over 65, and Percentage of     diabetes_prevalence and cardiovasc_death_rate 
+ I will create a model that can predict the risk for the Case Mortality Ratio of a Country utilizing its Life Expectancy, Percentage of Population over 65, and Percentage of      diabetes_prevalence and cardiovasc_death_rate 
   It decided on using Population Over Age 65 and diabetes_prevalence cardiovasc_death_rate because in the world, over 80% of the deaths were in the population 65 and over, and   the CDC has stated that 94% of deaths had some underlying health condition. We also used Life Expectancy per country to account for possible deficiencies in the health care  system. John Hopkins University has listed several diseases such as heart disease and Diabetes which are known to be exacerbated by cardiovasc_death_rate and Obesity. Our idea  is that we can more accurately predict the Mortality Ratio of COVID-19 by using both population 65 and over and Obesity rather than just population 65 and over. This may show  that creating a healthier population is the best way to prevent the devastation in future pandemics that the world is currently facing.
 After viewing the graphs in Linear Regression-Forecast we the accuracy that XGboost algorithms can achieve with this data. . We will continue and see if our ML Algorithm can do better than we are expecting. We have initially chosen to use categorization with the HighRisk category as that may be more accurate than regression.
 Or can we use more precise algorithms to build a data-appropriate learning model?
@@ -209,14 +232,8 @@ Or can we use more precise algorithms to build a data-appropriate learning model
 2- Preferably exclude vaccine columns, analyzing for example @ [covid-world-vaccination-progress](https://www.kaggle.com/gpreda/covid-world-vaccination-progress)
 
 3- It collects separate vaccine data, analyzes it, and creates a prediction model for daily and monthly vaccination
- 
-
 
 ## Conclusion
-
-### Reflection
-
-### Improvemen
 
 Based on the analysis, there are several things we can conclude.
 
@@ -235,6 +252,12 @@ school closures, workplace closures, and travel bans, rescaled to a value from 0
 6- we were able to create several visualizations in the Jupyter Notebook with scatterplots comparing the different features to the High Risk Category that we found to produce the best model. Age, and obesity do seem to be factors in the mortality rate with extra features such as smoking, cardiovascular disease helping improve the numbers further.
 
 7- Commitment to virus prevention tools, especially in densely populated cities Because differences in the population size between countries are often large, and the COVID-19 death count in more populous countries tends to be higher. Because of this it can be insightful to know how the number of confirmed deaths in a country compares to the number of people who live there, especially when comparing across countries.
+
+### Reflection
+
+### Improvemen
+
+
 
 ## Deliverables
 
