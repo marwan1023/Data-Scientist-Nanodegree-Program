@@ -315,11 +315,6 @@ school closures, workplace closures, and travel bans, rescaled to a value from 0
 
 7- Commitment to virus prevention tools, especially in densely populated cities Because differences in the population size between countries are often large, and the COVID-19 death count in more populous countries tends to be higher. Because of this it can be insightful to know how the number of confirmed deaths in a country compares to the number of people who live there, especially when comparing across countries.
 
-### Reflection
-
-### Improvemen
-
-
 
 ## Deliverables
 
